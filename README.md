@@ -66,7 +66,7 @@ To set up the fan control script as a systemd service that runs on boot, you'll 
       ```
   
   5.  Edit the Service File:
-        Use the template provided in fancontrol.service and modify the following fields:
+        Use the template provided in [fancontrol.service](https://github.com/iCaran/UbuntuFanControl/blob/main/fancontrol.service) and modify the following fields:
             ExecStart: Replace /path/to/your/fan.py with the full path to your fan control script.
             WorkingDirectory: Replace /home/your_username/ with the directory where your script is located.
             User: Replace your_username with your actual username on the system.
