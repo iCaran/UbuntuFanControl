@@ -1,0 +1,15 @@
+[Unit]
+Description=Fan Control Service
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /path/to/your/fan.py
+WorkingDirectory=/home/your_username/
+Restart=always
+User=your_username
+StandardOutput=null
+StandardError=null
+
+[Install]
+WantedBy=multi-user.target
