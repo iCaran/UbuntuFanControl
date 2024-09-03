@@ -34,28 +34,74 @@ This script manages the fan speeds on any PC running Ubuntu. It also reads the t
 
 ## Installation
 
+#### Configuring the fancontrol.service File
+
+To set up the fan control script as a systemd service that runs on boot, you'll need to configure the fancontrol.service file to match your system's configuration. Follow these steps:
+
 1. **Clone the Repository**
-   ```bash
+   ```
    git clone https://github.com/iCaran/UbuntuFanControl.git
    cd fan-control
    ```
 
 2. **Install Required Packages**
    For both the Raspberry Pi and Ubuntu laptop:
-   ```bash
+   ```
    sudo apt-get install lm-sensors
    ```
 
 3. **Set Up the Systemd Service**
    Copy the relevant `.service` file to `/etc/systemd/system/` and enable it:
-   ```bash
+   ```
    sudo cp fancontrol-rpi.service /etc/systemd/system/fancontrol.service
    sudo systemctl enable fancontrol.service
    ```
+   
+ 4.   Create the Service File:
+        Create a new file called fancontrol.service in the /etc/systemd/system/ directory.
+        You can do this with the following command:
+
+      ```
+      sudo nano /etc/systemd/system/fancontrol.service
+      ```
+  
+  5.  Edit the Service File:
+        Use the template provided in fancontrol.service and modify the following fields:
+            ExecStart: Replace /path/to/your/fan.py with the full path to your fan control script.
+            WorkingDirectory: Replace /home/your_username/ with the directory where your script is located.
+            User: Replace your_username with your actual username on the system.
+
+   6. Reload Systemd Daemon:
+        After saving the file, reload the systemd daemon to recognize the new service:
+
+      ```
+      sudo systemctl daemon-reload
+      ```
+
+    
+  7. Enable and Start the Service:
+        Enable the service to start on boot:
+
+        ```
+        sudo systemctl enable fancontrol.service
+        ```
+        Start the service immediately:
+
+        ```
+        sudo systemctl start fancontrol.service
+        ```
+        
+  8. Verify the Service:
+        Check the status of the service to ensure it's running:
+
+        ```
+        sudo systemctl status fancontrol.service
+        ```
 
 ## Usage
 
 ### Raspberry Pi
+#### or other ARM devices
 1. **Run the Script Manually**
    ```bash
    python3 /path/to/fan.py
@@ -67,6 +113,7 @@ This script manages the fan speeds on any PC running Ubuntu. It also reads the t
    ```
 
 ### PC
+#### x86 devices
 1. **Run the Script Manually**
    ```bash
    python3 /path/to/fan.py
