@@ -21,11 +21,11 @@ The scripts are designed to run in the background and automatically adjust fan s
 
 ### Raspberry Pi 
 #### or other ARM devices
-The Raspberry Pi script reads temperature data using the `sensors` command and adjusts the fan speed accordingly. The script is configured to handle up to four speed levels based on the current temperature.
+The ARM script reads temperature data using the `sensors` command and adjusts the fan speed accordingly. The script is configured to handle up to four speed levels based on the current temperature.
 
 ### PC
 #### x86 devices
-This script manages the fan speeds on any PC running Ubuntu. It also reads the temperature data using the `sensors` command and adjusts the fan speed accordingly. The script works with the built-in cooling device, which has three states.
+The x86 script manages the fan speeds on any PC running Ubuntu. It also reads the temperature data using the `sensors` command and adjusts the fan speed accordingly. The script works with the built-in cooling device, which has three states.
 
 ## Features
 - Automatic fan speed adjustment based on temperature.
@@ -104,7 +104,7 @@ To set up the fan control script as a systemd service that runs on boot, you'll 
 #### or other ARM devices
 1. **Run the Script Manually**
    ```bash
-   python3 /path/to/fan.py
+   python3 /path/to/armfan.py
    ```
 
 2. **Start the Systemd Service**
@@ -116,7 +116,7 @@ To set up the fan control script as a systemd service that runs on boot, you'll 
 #### x86 devices
 1. **Run the Script Manually**
    ```bash
-   python3 /path/to/fan.py
+   python3 /path/to/x86fan.py
    ```
 
 2. **Start the Systemd Service**
