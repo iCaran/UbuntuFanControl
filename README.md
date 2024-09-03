@@ -1,14 +1,14 @@
 # Fan Control Scripts
 
-This repository contains scripts to manage fan speeds on both a Raspberry Pi 5 and an MSI GF63 Thin 9SCXR laptop running Ubuntu. These scripts allow for automatic adjustment of fan speeds based on the system's temperature to prevent overheating and optimize performance.
+This repository contains scripts to manage fan speeds on both a Raspberry Pi (meaning ARM devices) and a PC (meaning x86 devices) running Ubuntu. These scripts allow for automatic adjustment of fan speeds based on the system's temperature to prevent overheating and optimize performance.
 
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Raspberry Pi 5](#raspberry-pi-5)
-  - [MSI GF63 Thin 9SCXR Laptop](#msi-gf63-thin-9scxr-laptop)
+  - [Raspberry Pi](#raspberry-pi)
+  - [PC](#PC)
 - [Customization](#customization)
   - [Temperature Thresholds](#temperature-thresholds)
   - [Max Fan Speed](#max-fan-speed)
@@ -19,11 +19,13 @@ This repository contains scripts to manage fan speeds on both a Raspberry Pi 5 a
 
 The scripts are designed to run in the background and automatically adjust fan speeds based on temperature readings. They can be set to start on boot using systemd services.
 
-### Raspberry Pi 5
+### Raspberry Pi 
+## or other ARM devices
 The Raspberry Pi script reads temperature data using the `sensors` command and adjusts the fan speed accordingly. The script is configured to handle up to four speed levels based on the current temperature.
 
-### MSI GF63 Thin 9SCXR Laptop
-This script manages the fan speeds on an MSI GF63 Thin 9SCXR laptop running Ubuntu. It also reads the temperature data using the `sensors` command and adjusts the fan speed accordingly. The script works with the built-in cooling device, which has three states.
+### PC
+## x86 devices
+This script manages the fan speeds on any PC running Ubuntu. It also reads the temperature data using the `sensors` command and adjusts the fan speed accordingly. The script works with the built-in cooling device, which has three states.
 
 ## Features
 - Automatic fan speed adjustment based on temperature.
@@ -53,7 +55,7 @@ This script manages the fan speeds on an MSI GF63 Thin 9SCXR laptop running Ubun
 
 ## Usage
 
-### Raspberry Pi 5
+### Raspberry Pi
 1. **Run the Script Manually**
    ```bash
    python3 /path/to/fan.py
@@ -64,7 +66,7 @@ This script manages the fan speeds on an MSI GF63 Thin 9SCXR laptop running Ubun
    sudo systemctl start fancontrol.service
    ```
 
-### MSI GF63 Thin 9SCXR Laptop
+### PC
 1. **Run the Script Manually**
    ```bash
    python3 /path/to/fan.py
