@@ -176,5 +176,3 @@ This project is licensed under the Unlicense, which means it is free and unencum
 For more information, see the [LICENSE](LICENSE) file.
 
 ---
-
-This README now includes a section on customizing the script to fit different systems or user needs and reflects the Unlicense license. Replace `<your-username>` with your actual GitHub username before uploading.
